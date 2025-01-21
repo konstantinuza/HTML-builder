@@ -21,6 +21,7 @@ async function mergeStyle(from, to) {
       }
     }
   }
+  console.log('--- Styles are merged. Script is done.')
 }
 
 mergeStyle(from, to);

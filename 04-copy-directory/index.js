@@ -15,6 +15,7 @@ async function copyDir(from, to) {
       await copyDir(orgPath, copyPath);
     }
   }
+  console.log('--- Directory copying is completed')
 }
 
 const from = path.join(__dirname, 'files');

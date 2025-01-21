@@ -13,6 +13,8 @@ async function buildPage() {
   await replaceHtml(path.join(__dirname, 'components'), path.join(projectPath, 'index.html'));
   await mergeStyle(path.join(__dirname, 'styles'), path.join(projectPath, 'style.css'));
   await copyDir(path.join(__dirname, 'assets'), path.join(projectPath, 'assets'));
+
+  console.log('--- Page build is complete');
 }
 
 async function replaceHtml(from, to) {
