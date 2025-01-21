@@ -13,7 +13,7 @@ console.log(`--- Yo, human! Enter text to write to file!\n--- When you're done, 
 stdin.on('data', (data) => {
   const text = data.toString().trim();
 
-  if (text === 'exit') exit();
+  if (text.toLowerCase() === 'exit') exit();
 
   fs.appendFile(pathFile, text + '\n', (err) => {
     if (err) throw err;
