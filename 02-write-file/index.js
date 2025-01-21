@@ -1,7 +1,10 @@
 const { stdin, exit } = process;
 const fs = require('fs');
+const path = require('path');
 
-fs.writeFile('text.txt', '', (err) => {
+const pathFile = path.join(__dirname, 'text.txt');
+
+fs.writeFile(pathFile, '', (err) => {
   if (err) throw err;
 });
 
@@ -12,7 +15,7 @@ stdin.on('data', (data) => {
 
   if (text === 'exit') exit();
 
-  fs.appendFile('text.txt', text + '\n', (err) => {
+  fs.appendFile(pathFile, text + '\n', (err) => {
     if (err) throw err;
   });
 });

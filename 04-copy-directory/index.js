@@ -17,6 +17,7 @@ async function copyDir(from, to) {
   }
 }
 
+const from = path.join(__dirname, 'files');
+const to = path.join(__dirname, 'copy-files');
 
-
-copyDir('files', 'copy-files');
+copyDir(from, to);
