@@ -26,7 +26,7 @@ async function replaceHtml(from, to) {
 
       if (fileParse.ext === '.html') {
         const content = await readFile(filePath, 'utf-8');
-        mainFile = mainFile.replace(`{{${fileParse.name}}}`, content);
+        mainFile = mainFile.replaceAll(`{{${fileParse.name}}}`, content);
       }
     }
   }
