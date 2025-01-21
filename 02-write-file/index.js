@@ -5,7 +5,7 @@ fs.writeFile('text.txt', '', (err) => {
   if (err) throw err;
 });
 
-console.log(`--- Yo, human! Enter text to write to file!\n--- When you're done, enter "exit" to end recording -->>`);
+console.log(`--- Yo, human! Enter text to write to file!\n--- When you're done, enter "exit" or press (ctrl + c) to end recording -->>`);
 
 stdin.on('data', (data) => {
   const text = data.toString().trim();
@@ -21,8 +21,9 @@ process.on('exit', function () {
   console.log(`--- File writing is complete, it's easy for me.`);
 })
 
-
-
+process.on('SIGINT', () => {
+  exit();
+});
 
 
 
