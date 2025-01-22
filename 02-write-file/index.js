@@ -4,6 +4,10 @@ const path = require('path');
 
 const pathFile = path.join(__dirname, 'text.txt');
 
+fs.writeFile(pathFile, '', (err) => {
+  if (err) throw err;
+});
+
 console.log(`--- Yo, human! Enter text to write to file!\n--- When you're done, enter "exit" or press (ctrl + c) to end recording -->>`);
 
 stdin.on('data', (data) => {
